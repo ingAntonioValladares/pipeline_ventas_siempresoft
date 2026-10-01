@@ -1,0 +1,38 @@
+===============================================================================
+PROCEDIMIENTO DE ACTUALIZACIÓN Y CARGA DE DATOS - PIPELINE ETL SIEMPRESOFT
+===============================================================================
+
+1. FRECUENCIA DE ACTUALIZACIÓN
+-------------------------------------------------------------------------------
+El pipeline procesa archivos acumulados por año fiscal. Permite actualizaciones:
+- Diarias
+- Semanales
+- Quincenales
+- Mensuales / Cierre de Mes
+
+2. INSTRUCCIONES PARA DESCARGAR DATOS DE SIEMPRESOFT
+-------------------------------------------------------------------------------
+Al descargar reportes periódicos durante el año en curso (ej. Octubre 2026):
+
+a) Exporta el reporte desde SiempreSoft/AlwaysData seleccionando el rango:
+   DESDE: 01 de Enero del año actual (ej. 01/01/2026)
+   HASTA: La fecha de corte actual (ej. 07/10/2026, 15/10/2026, 31/10/2026).
+
+b) Guarda o sobrescribe el archivo en la raíz del proyecto con la nomenclatura estándar:
+   - "VENTAS POR CLIENTE ARTICULO 2026.xlsx"
+
+3. EJECUCIÓN DEL PIPELINE
+-------------------------------------------------------------------------------
+Abre la terminal en la raíz del proyecto y ejecuta:
+
+   python 02_pipeline_etl.py
+
+El script consolidará automáticamente los años 2024, 2025 y el año 2026 actualizado,
+actualizando la columna del mes en curso (ej. OCTUBRE) sin duplicar datos ni perder
+la integridad de las métricas de Cantidad e Importe.
+
+4. RESULTADOS GENERADOS
+-------------------------------------------------------------------------------
+Los datos limpios y listos para Power BI se generarán en la carpeta:
+- reportes/consolidado_ventas_siempresoft.csv
+- reportes/consolidado_ventas_siempresoft.xlsx
