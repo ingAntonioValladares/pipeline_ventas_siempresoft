@@ -1,0 +1,14 @@
+# Entorno virtual
+venv/
+.venv/
+env/
+
+# Caché de Python
+__pycache__/
+*.pyc
+
+# Archivos de configuración o credenciales locales (si aplica)
+*.env
+
+# Archivos de reporte generados (opcional, agrégalo si no deseas subir los datos a GitHub)
+reportes/
