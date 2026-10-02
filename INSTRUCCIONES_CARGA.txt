@@ -24,7 +24,8 @@ b) Guarda o sobrescribe el archivo en la raíz del proyecto con la nomenclatura 
 3. EJECUCIÓN DEL PIPELINE
 -------------------------------------------------------------------------------
 Abre la terminal en la raíz del proyecto y ejecuta:
-
+   .\venv\Scripts\Activate.ps1 (habilitar el entorno virtual venv)
+   y luego
    python 02_pipeline_etl.py
 
 El script consolidará automáticamente los años 2024, 2025 y el año 2026 actualizado,
